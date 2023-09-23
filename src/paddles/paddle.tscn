@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxr3ymtt8h808"]
+
+[ext_resource type="Texture2D" uid="uid://p3uim87qqnel" path="res://icon.svg" id="1_tv5xh"]
+
+[node name="paddle" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.375, 1.875)
+texture = ExtResource("1_tv5xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
