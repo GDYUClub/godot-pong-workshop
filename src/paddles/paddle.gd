@@ -10,15 +10,18 @@ func _ready() -> void:
 	
 	pass
 
-func getInput() -> Vector2:
-	var r := Vector2.ZERO
-	if isLeft:
-		r = Vector2(0 , Input.get_action_strength("sKey") - Input.get_action_strength("wKey"))
+func getYInput() -> float:
+	var r := 0.0
+	if isPlayerControlled:
+		if isLeft:
+			r = Input.get_action_strength("sKey") - Input.get_action_strength("wKey")
+		else:
+			r =  Input.get_action_strength("downArrow") - Input.get_action_strength("upArrow")
 	else:
-		r = Vector2(0 , Input.get_action_strength("downArrow") - Input.get_action_strength("upArrow"))
-	print(r, name)
+		var ball : CharacterBody2D = get_tree().get_first_node_in_group("ball")
+		r = (ball.global_position.y - global_position.y) / 10.0
 	return r
 
 func _physics_process(delta: float) -> void:
-	velocity = getInput() * SPEED
+	velocity = Vector2(0,getYInput() )* SPEED
 	move_and_slide()
