@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg6g10km007qt"]
+[gd_scene load_steps=6 format=3 uid="uid://dg6g10km007qt"]
 
 [ext_resource type="PackedScene" uid="uid://dxr3ymtt8h808" path="res://src/paddles/paddle.tscn" id="1_fkx51"]
 [ext_resource type="PackedScene" uid="uid://bouwwsntx8iu0" path="res://src/ball/ball.tscn" id="2_0ct1f"]
 [ext_resource type="PackedScene" uid="uid://daxoa812wai4p" path="res://src/block/block.tscn" id="3_6ibb6"]
+[ext_resource type="PackedScene" uid="uid://bw6re3h5q0opl" path="res://src/block/score_detectors.tscn" id="4_klaa6"]
+[ext_resource type="PackedScene" uid="uid://87wk741ann82" path="res://src/UI/labels/label_block.tscn" id="5_oham3"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -17,16 +19,30 @@ isPlayerControlled = false
 [node name="ball" parent="." instance=ExtResource("2_0ct1f")]
 position = Vector2(728, 288)
 
-[node name="block" parent="." instance=ExtResource("3_6ibb6")]
-position = Vector2(576, -40)
+[node name="objs" type="Node2D" parent="."]
 
-[node name="block2" parent="." instance=ExtResource("3_6ibb6")]
-position = Vector2(576, 688)
+[node name="block" parent="objs" instance=ExtResource("3_6ibb6")]
+position = Vector2(576, -32)
 
-[node name="block3" parent="." instance=ExtResource("3_6ibb6")]
-position = Vector2(-40, 352)
-rotation = 1.57079
+[node name="block2" parent="objs" instance=ExtResource("3_6ibb6")]
+position = Vector2(576, 672)
 
-[node name="block4" parent="." instance=ExtResource("3_6ibb6")]
-position = Vector2(1200, 352)
-rotation = 1.57079
+[node name="scoreDetectors" parent="objs" instance=ExtResource("4_klaa6")]
+position = Vector2(-16, 320)
+isLeft = true
+
+[node name="scoreDetectors2" parent="objs" instance=ExtResource("4_klaa6")]
+position = Vector2(1168, 320)
+
+[node name="labelBlock" parent="objs" instance=ExtResource("5_oham3")]
+offset_left = 408.0
+offset_top = 112.0
+offset_right = 408.0
+offset_bottom = 112.0
+isLeftLabel = true
+
+[node name="labelBlock2" parent="objs" instance=ExtResource("5_oham3")]
+offset_left = 816.0
+offset_top = 120.0
+offset_right = 816.0
+offset_bottom = 120.0

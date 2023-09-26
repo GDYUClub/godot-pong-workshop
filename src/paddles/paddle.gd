@@ -19,7 +19,7 @@ func getYInput() -> float:
 			r =  Input.get_action_strength("downArrow") - Input.get_action_strength("upArrow")
 	else:
 		var ball : CharacterBody2D = get_tree().get_first_node_in_group("ball")
-		r = (ball.global_position.y - global_position.y) / 10.0
+		r = (ball.global_position.y - global_position.y) / 30.0
 	return r
 
 func _physics_process(delta: float) -> void:
