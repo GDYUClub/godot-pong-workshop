@@ -35,14 +35,14 @@ isLeft = true
 position = Vector2(1168, 320)
 
 [node name="labelBlock" parent="objs" instance=ExtResource("5_oham3")]
-offset_left = 408.0
-offset_top = 112.0
-offset_right = 408.0
-offset_bottom = 112.0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 128.0
 isLeftLabel = true
 
 [node name="labelBlock2" parent="objs" instance=ExtResource("5_oham3")]
-offset_left = 816.0
-offset_top = 120.0
-offset_right = 816.0
-offset_bottom = 120.0
+offset_left = 896.0
+offset_top = 128.0
+offset_right = 896.0
+offset_bottom = 128.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://87wk741ann82"]
+[gd_scene load_steps=3 format=3 uid="uid://87wk741ann82"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_m87sw"]
+[ext_resource type="FontFile" uid="uid://biyepva2j35dw" path="res://assets/Kenney Pixel.ttf" id="2_50x2o"]
 
 [node name="labelBlock" type="Control"]
 layout_mode = 3
@@ -15,3 +16,6 @@ script = ExtResource("1_m87sw")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.498039, 0.498039, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_50x2o")
+theme_override_font_sizes/font_size = 128
